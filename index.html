@@ -12,6 +12,8 @@
       <h3>My Todos</h3>
       <div ng-repeat="todo in todosCtrl.allTodos | filter: false">
         <p>{{todo.content}}</p>
+        <p>Completed?<input type="checkbox" ng-model="todo.completed"></p>
+        <hr>
       </div>
     </div>
 
@@ -19,6 +21,8 @@
       <h3>Completed Todos!</h3>
       <div ng-repeat="todo in todosCtrl.allTodos | filter: true">
         <p>{{todo.content}}</p>
+        <p>Completed?<input type="checkbox" ng-model="todo.completed"></p>
+        <hr>
       </div>
     </div>
 
