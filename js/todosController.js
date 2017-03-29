@@ -1,8 +1,12 @@
 angular.module('todoApp')
-  .controller(TodosController, TodosController)
+  .controller('TodosController', TodosController)
 
 function TodosController() {
   var self = this
+  self.add = addTodo
+  self.newTodo = {
+    content: ''
+  }
 
   self.allTodos = [
     {
@@ -18,4 +22,14 @@ function TodosController() {
       completed: true
     }
   ]
+
+  function addTodo(){
+      self.allTodos.push({
+        content: self.newTodo.content,
+        completed: false
+      })
+      self.newTodo = {
+        content: ''
+      }
+    }
 }
