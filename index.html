@@ -10,13 +10,16 @@
   <body class="container" ng-controller="TodosController as todosCtrl">
     <div id="todo">
       <h3>My Todos</h3>
-      <div>
+      <div ng-repeat="todo in todosCtrl.allTodos | filter: false">
+        <p>{{todo.content}}</p>
       </div>
     </div>
 
     <div id="completed">
       <h3>Completed Todos!</h3>
-      <div></div>
+      <div ng-repeat="todo in todosCtrl.allTodos | filter: true">
+        <p>{{todo.content}}</p>
+      </div>
     </div>
 
   </body>
