@@ -4,9 +4,8 @@ angular.module('todoApp')
 function TodosController() {
   var self = this
   self.add = addTodo
-  self.newTodo = {
-    content: ''
-  }
+  self.newTodo = {content: ''}
+  // self.leftToDo = leftToDo
 
   self.allTodos = [
     {
@@ -32,4 +31,12 @@ function TodosController() {
         content: ''
       }
     }
+
+  // function leftToDo(){
+  //   var count = 0
+  //   self.allTodos.forEach(function(todo){
+  //     count += todo.completed ? 0 : 1
+  //   })
+  //   return count
+  // }
 }

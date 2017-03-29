@@ -8,11 +8,17 @@
     <script src="js/todosController.js"></script>
   </head>
   <body class="container" ng-controller="TodosController as todosCtrl">
+    <h2>You have BLANK left todo</h2>
+      <form class="form-inline" id='add-todo' ng-submit="todoCtrl.add()">
+      <label class="sr-only" for="newTodo.content">Content</label>
+  		<input class="form-control" type="text" placeholder="Write Todo here..." ng-model="newTodo.content" />
+      <label class="sr-only" for="newTodo"></label>
+			<input class="btn btn-default" type="submit"/>
     <div id="todo">
       <h3>My Todos</h3>
       <div ng-repeat="todo in todosCtrl.allTodos | filter: false">
-        <p>{{todo.content}}</p>
-        <p>Completed?<input type="checkbox" ng-model="todo.completed"></p>
+        <h4>{{todo.content}}</h4>
+        <h5>Completed?<input type="checkbox" ng-model="todo.completed"></h5>
         <hr>
       </div>
     </div>
@@ -20,7 +26,7 @@
     <div id="completed">
       <h3>Completed Todos!</h3>
       <div ng-repeat="todo in todosCtrl.allTodos | filter: true">
-        <p>{{todo.content}}</p>
+        <h4>{{todo.content}}</h4>
         <p>Completed?<input type="checkbox" ng-model="todo.completed"></p>
         <hr>
       </div>
