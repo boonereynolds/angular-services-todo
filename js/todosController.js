@@ -1,6 +1,6 @@
 angular.module('todoApp')
-  .controller('todoApp', todoApp)
+  .controller('TodosController', TodosController)
 
 function TodosController() {
-  
+
 }
